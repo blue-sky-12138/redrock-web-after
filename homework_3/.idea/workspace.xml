@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="855830d4-c8e1-4dd3-b1cc-386bbc96b907" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="C:\Go" />
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1jeEYKY3OIJTBQBviM9QOYUidF6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\GoProjects\src\homework_3\LV3" />
+      <recent name="C:\GoProjects\src\homework_3\LV2" />
+      <recent name="C:\GoProjects\src\homework_3\LV1" />
+      <recent name="C:\GoProjects\src\homework_3\LV0" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.go build LV2.go">
+    <configuration name="go build LV1.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="homework_3" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/LV1/LV1.go" />
+      <package value="homework_3" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build LV2.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="homework_3" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/LV2/LV2.go" />
+      <package value="homework_3" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build LV3.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="homework_3" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/LV3/LV3.go" />
+      <package value="homework_3" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build homework_3/LV2" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="homework_3" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/LV2/LV2.go" />
+      <package value="homework_3/LV2" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build text.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="homework_3" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/text.go" />
+      <package value="homework_3" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build LV2.go" />
+        <item itemvalue="Go Build.go build homework_3/LV2" />
+        <item itemvalue="Go Build.go build LV1.go (1)" />
+        <item itemvalue="Go Build.go build LV3.go" />
+        <item itemvalue="Go Build.go build text.go" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="384" y="202" key="#Notifications" timestamp="1604199670339">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="384" y="202" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1604199670339" />
+    <state width="1127" height="165" key="GridCell.Tab.0.bottom" timestamp="1604407738373">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1127" height="165" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604407738373" />
+    <state width="1127" height="165" key="GridCell.Tab.0.center" timestamp="1604407738372">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1127" height="165" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604407738372" />
+    <state width="1127" height="165" key="GridCell.Tab.0.left" timestamp="1604407738372">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1127" height="165" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604407738372" />
+    <state width="1127" height="165" key="GridCell.Tab.0.right" timestamp="1604407738372">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1127" height="165" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604407738372" />
+    <state x="306" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1604407099729">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="306" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1604407099729" />
+  </component>
+</project>
