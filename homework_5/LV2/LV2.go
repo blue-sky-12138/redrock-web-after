@@ -22,6 +22,8 @@ type Register struct{
 }
 var nameChan=make(chan int,1)	//输送用户名，达到在两个函数中传递数据
 var registerWrongChan=make(chan int,1)	//输送注册错误信息
+var loginNameChan=make(chan int,1)	//输送cookie信息,用于注册cookie
+
 
 //http://localhost:8080/Login
 func main() {
@@ -58,7 +60,7 @@ func main() {
 		context.HTML(http.StatusOK,"login.html",nil)
 	})
 	//接受传入数据
-	router.POST("/Login/Create", func(context *gin.Context) {
+	router.POST("/Login", func(context *gin.Context) {
 		var login Login
 		name, _ :=context.GetPostForm("name")
 		login.name,_= strconv.Atoi(name)
@@ -68,8 +70,9 @@ func main() {
 		err,ifSuccess:=logIn(nameKeyMap,login.name,login.password)
 		if ifSuccess{
 			nameChan <-login.name
-			context.Request.URL.Path= "/LoginSuccess"
+			context.Request.URL.Path="/index"
 			router.HandleContext(context)
+			//新建cookie
 		}else if err==1{
 			context.Request.URL.Path= "/LoginFalse1"
 			router.HandleContext(context)
@@ -79,7 +82,7 @@ func main() {
 		}
 	})
 	//登录检测结果
-	router.POST("/LoginSuccess", func(c *gin.Context) {
+	router.POST("/index", func(c *gin.Context) {
 		name:= strconv.Itoa(<-nameChan)		//int转字符串
 		c.String(http.StatusOK,"欢迎回来："+name)
 	})
@@ -90,6 +93,24 @@ func main() {
 		c.String(http.StatusOK,"密码错误")
 	})
 
+	router.GET("/index", func(context *gin.Context) {
+
+		cookieName,err:=context.Cookie("users")
+		if err!=nil{
+			context.HTML(http.StatusOK,"login.html",cookieName)
+		}else{
+			context.HTML(http.StatusOK,"login.html","游客")
+			cookie := &http.Cookie{
+				Name:     "users",
+				Value:    strconv.Itoa(<-loginNameChan),
+				MaxAge:   1000000,
+				Path:     "/",
+				Domain:   "localhost",
+				Secure:   false,
+				HttpOnly: true,
+			}
+			http.SetCookie(context.Writer,cookie)		}
+	})
 
 	//显示注册界面
 	router.GET("/Register", func(context *gin.Context) {
