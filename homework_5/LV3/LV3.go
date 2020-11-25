@@ -5,10 +5,12 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"io/ioutil"
+	"math/rand"
 	"net/http"
 	"os"
 	"strconv"
 	"strings"
+	"time"
 )
 
 type Login struct{
@@ -20,11 +22,17 @@ type Register struct{
 	password string
 	passwordAgain string
 }
+type drawContext struct{			//抽奖页面内容结构体
+	Name string
+	Brief string
+	Path string
+}
 var nameChan=make(chan int,1)	//输送用户名，达到在两个函数中传递数据
-var registerWrongChan=make(chan int,1)	//输送注册错误信息
+var registerWrongChan=make(chan string,1)	//输送注册错误信息
 
 //http://localhost:8080/index
 func main() {
+
 	//加载用户数据
 	contact := make([]byte, 0)
 	nameKeyMap :=make(map[int]string)
@@ -50,14 +58,15 @@ func main() {
 
 
 	router := gin.Default()
-	router.LoadHTMLGlob("templates/**/*")
+	router.LoadHTMLGlob("templates/html/*")
 	router.Static("/css", "./templates/css")
+	router.Static("/image", "./templates/image")
 
 	//显示登录界面
 	router.GET("/Login", func(context *gin.Context) {
 		context.HTML(http.StatusOK,"login.html",nil)
 	})
-	//接受传入数据
+	//接受传入登录数据
 	router.POST("/Login/Create", func(context *gin.Context) {
 		var login Login
 		name, _ :=context.GetPostForm("name")
@@ -81,18 +90,16 @@ func main() {
 			http.SetCookie(context.Writer,cookie)
 			context.Redirect(http.StatusMovedPermanently,"/index")
 		}else if err==1{
-			context.Request.URL.Path= "/LoginFalse1"
-			router.HandleContext(context)
+			context.Redirect(http.StatusMovedPermanently,"/LoginFalse1")
 		}else if err==2{
-			context.Request.URL.Path= "/LoginFalse2"
-			router.HandleContext(context)
+			context.Redirect(http.StatusMovedPermanently,"/LoginFalse2")
 		}
 	})
 	//登录检测结果
-	router.POST("/LoginFalse1", func(c *gin.Context) {
+	router.GET("/LoginFalse1", func(c *gin.Context) {
 		c.String(http.StatusOK,"该用户名不存在")
 	})
-	router.POST("/LoginFalse2", func(c *gin.Context) {
+	router.GET("/LoginFalse2", func(c *gin.Context) {
 		c.String(http.StatusOK,"密码错误")
 	})
 
@@ -119,8 +126,8 @@ func main() {
 		//注册检测并重定向
 		err:=RegisterIn(nameKeyMap,register,f)
 		registerWrongChan<-err
-		switch err{
-		case 0:
+		switch {
+		case err=="":
 			context.Redirect(http.StatusMovedPermanently,"/RegisterSuccess")
 		default:
 			context.Redirect(http.StatusMovedPermanently,"/RegisterFalse")
@@ -131,10 +138,46 @@ func main() {
 		c.String(http.StatusOK,"注册成功")
 	})
 	router.GET("/RegisterFalse", func(c *gin.Context) {
-		err:=strconv.Itoa(<-registerWrongChan)
-		c.String(http.StatusOK,"注册失败，问题代号："+err+"\n代号全解：\n1.手机号错误\n2.用户名已存在\n3.密码含有非法字符\n4.密码过短\n5.两次密码不一致")
+		err:=<-registerWrongChan
+		c.String(http.StatusOK,"注册失败，"+err)
 	})
 
+	//上传页面
+	router.GET("/upload", func(context *gin.Context) {
+		context.HTML(http.StatusOK,"upload.html",nil)
+	})
+
+	//抽奖页面
+	router.GET("/draw", func(context *gin.Context) {
+		context.HTML(http.StatusOK,"draw.html",nil)
+	})
+	router.GET("/drawBack", func(context *gin.Context) {
+		var nameTem,briefTem,pathTem string
+		rand.Seed(time.Now().Unix())		//随机种子
+		switch rand.Intn(2){
+		case 0:{
+			nameTem="星星学姐"
+			briefTem="超人气学姐，web红岩女团成员之一"
+			pathTem="./templates/image/1.jpg"
+		}
+		case 1:{
+			nameTem="鑫鑫学姐"
+			briefTem="高冷气质学姐，web红岩女团成员之一"
+			pathTem="./templates/image/2.jpg"
+		}
+		case 2:{
+			nameTem="峰峰学姐"
+			briefTem="温柔派学姐，web红岩女团成员之一"
+			pathTem="./templates/image/3.jpg"
+		}
+		}
+		drawBack:=drawContext{
+			Name: nameTem,
+			Brief:briefTem ,
+			Path:pathTem,
+		}
+		context.HTML(http.StatusOK,"drawBack.html",drawBack)
+	})
 
 	router.Run()
 }
@@ -164,27 +207,27 @@ func logIn(nameKeyMap map[int]string ,name int,key string)(int,bool){
 }
 
 //注册
-func RegisterIn(nameKeyMap map[int]string,register Register,f *os.File)int{
+func RegisterIn(nameKeyMap map[int]string,register Register,f *os.File)string{
 	_,pd :=nameKeyMap[register.name]
 	if register.name<=10000000000 || register.name>=100000000000{
 		//简易判断手机号位数
-		return 1
+		return "手机号错误"
 	}else if pd==true{
-		return 2
+		return "用户名已存在"
 	}
 
 	//密码输入
 	if strings.Contains(register.password,"/"){
 		//简易判断密码非法符号
-		return 3
+		return "密码含有非法字符"
 	}else if len(register.password)<=6{
-		return 4
+		return "密码过短"
 	}
 	if register.passwordAgain!=register.password{
-		return 5
+		return "两次密码不一致"
 	}
 	newInformation:=fmt.Sprintf("%d %s\n",register.name,register.password)
 	n,_:=f.Seek(0,2)
 	f.WriteAt([]byte(newInformation),n)
-	return 0
+	return ""
 }
