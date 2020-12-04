@@ -1,1 +1,0 @@
-INSERT INTO homework6_student_information_correction.students_information (students_ID, classNumber, name, password, average_point) VALUES (2020233333, 27, '王小美', 'Wangxiaomei12138', 2);
