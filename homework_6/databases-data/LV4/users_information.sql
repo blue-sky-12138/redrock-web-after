@@ -1,0 +1,3 @@
+INSERT INTO redrock_temporary_test.users_information (ID, name, password, signature, telephone_number, MD5salt) VALUES (1, 'Administrator', 'efbfbd421aa90e079fa326b6494f812ad13e79', '这是我的地盘', 20202020202, 1607065568);
+INSERT INTO redrock_temporary_test.users_information (ID, name, password, signature, telephone_number, MD5salt) VALUES (2, 'hong24', 'efbfbd8b45316877beae7f0d4ddff900ba9083', '丢人，马上给我滚出战场', 12359310537, 1607063860);
+INSERT INTO redrock_temporary_test.users_information (ID, name, password, signature, telephone_number, MD5salt) VALUES (3, 'qrg47', 'efbfbdcdd821b0cbe52170781fe3fb79d5be15', '利兹与青鸟什么时候引进啊啊啊啊', 15723593342, 1607063503);
