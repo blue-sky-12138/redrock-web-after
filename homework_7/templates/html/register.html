@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  type="text/css" rel="stylesheet" href="../css/register.css">
+    <title>注册</title>
+</head>
+<body>
+<div id="main">
+    <div id="top">
+            <span id="zhecetitle">注册</span
+            ><span id="x"><a href="/Login">x</a></span>
+    </div>
+    <form action="/Register/Create" method="post">
+        <p class="tishi1">手机号</p>
+        <input min="10000000000" max="100000000000" type="number" placeholder="    11位手机号" id="zhanghao" name="telephone_number" required>
+        <p class="tishi4">名称</p>
+        <input type="text" placeholder="    您的名称" id="zhanghao2" name="name" required>
+        <p class="tishi2">
+            <span id="mi1">密码</span
+            ></p>
+        <input type="password" placeholder="    请输入密码" id="mima" name="password" required>
+        <br>
+        <p id="tishi3">请输入密码</p>
+        <input type="password" placeholder="    请再次输入密码" id="mima2" name="passwordAgain" required>
+        <br>
+        <input type="submit" id="zhuce" value="注册">
+    </form>
+</div>
+</body>
+</html>

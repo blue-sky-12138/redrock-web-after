@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  type="text/css" rel="stylesheet" href="../css/login.css">
+    <title>点赞</title>
+</head>
+<body>
+<div id="main">
+    <div id="top">
+            <span id="Dengtitle">点赞</span
+            ><span id="x"><a href="/index">x</a></span>
+    </div>
+    <form action="/LeaveMessage/Create" method="post">
+        <p class="tishi1">请选择点赞楼层的ID</p>
+        <input type="number" name="Floor" min="1" id="PreviousFloor2" required>
+        <p class="tishi1">选择是否点赞(1为点赞，0为取消点赞)</p>
+        <input type="number" name="Like" min="0" max="1" id="PreviousFloor" required>
+        <br>
+        <input type="submit" id="denglu" value="留言">
+    </form>
+</div>
+</body>
+</html>

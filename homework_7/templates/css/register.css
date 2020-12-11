@@ -1,0 +1,173 @@
+*{
+    margin: 0px;
+}
+
+a{
+    text-decoration: none;
+    color: #5ebf9b;
+}
+
+#main{
+    height: 500px;
+    width: 600px;
+    position: fixed;
+    top: 50%;
+    margin-top: -250px;
+    left: 50%;
+    margin-left: -300px;
+    background-color: #ffffff;
+    box-shadow: darkgray;
+    border: 1px solid darkgrey;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#top{
+    height: 53px;
+    background-color: #f3f3f3;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#zhecetitle{
+    float: left;
+    margin: 12px 20px;
+    color: #7a7a7a;
+    font-weight: 550;
+    font-size: 1.2em;
+}
+
+#x{
+    color: #c3c3c3;
+    float: right;
+    margin: 12px 15px;
+}
+
+.tishi1{
+    margin-top: 25px;
+    margin-bottom: 5px;
+    margin-left: -275px;
+    color: #424242;
+    font-weight: 900;
+    font-size: 1em;
+}
+
+.tishi4{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: -290px;
+    color: #424242;
+    font-weight: 900;
+    font-size: 1em;
+}
+#zhanghao{
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    outline: none;
+    height: 30px;
+    width: 320px;
+    font-size: 1.0em;
+}
+
+#zhanghao2{
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    outline: none;
+    height: 30px;
+    width: 320px;
+    font-size: 1.0em;
+}
+
+.tishi2{
+    position: relative;
+    left: 50%;
+    width: 320px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-left: -160px;
+}
+
+#tishi3{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: -240px;
+    color: #424242;
+    font-weight: 900;
+    font-size: 1em;
+}
+
+#mi1{
+    float: left;
+    font-weight: bold;
+    font-size: 1em;
+    color: #424242;
+}
+
+#mima2{
+    margin-bottom: 10px;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    height: 30px;
+    width: 320px;
+    font-size: 1.0em;
+}
+
+#Mititle{
+    float: right;
+    font-size: 1em;
+}
+
+#mima{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    height: 30px;
+    width: 320px;
+    font-size: 1.0em;
+}
+
+#yanzhengma{
+    font-weight: bolder;
+    margin: 20px 0px 20px -210px;
+    font-size: 1em;
+}
+
+#denglu{
+    width: 320px;
+    height: 36px;
+    border: 1px solid;
+    border-radius: 5px;
+    outline: none;
+    background-color: #009a61;
+    color: white;
+    font-size: 1.0em;
+    margin-bottom: 10px;
+}
+
+#more{
+    color: #9c9c9c;
+    font-size: 0.9em;
+}
+
+#Zhuce{
+    margin-top: 10px;
+}
+
+#zhuce{
+    width: 320px;
+    height: 36px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid darkgrey;
+    outline: none;
+    font-size: 0.9em;
+    background-color: white;
+    color: #6f6f6f;
+}
+
+#least{
+    font-size: 0.8em;
+    color: #a9a9a9;
+    margin-top: 10px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  type="text/css" rel="stylesheet" href="../css/login.css">
+    <title>登录</title>
+</head>
+<body>
+    <div id="main">
+        <div id="top">
+            <span id="Dengtitle">登录</span
+            ><span id="x"><a href="/index">x</a></span>
+        </div>
+        <form action="/Login/Create" method="post">
+            <p class="tishi1">账号</p>
+            <input type="number" placeholder="    请输入账号" id="zhanghao" name="name" required>
+            <p class="tishi2">
+                <span id="mi1">密码</span
+            ></p>
+            <input type="password" placeholder="    请输入密码" id="mima" name="password" required>
+            <br>
+            <input type="submit" id="denglu" value="登录">
+        </form>
+        <form action="/Register" method="get">
+            <input type="submit" id="zhuce" value="注册">
+        </form>
+    </div>
+</body>
+</html>

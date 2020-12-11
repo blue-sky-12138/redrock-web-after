@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言墙</title>
+</head>
+<body>
+<a href="/index"><input type="button" value="回到主页"></a>
+{{range .}}
+<p>{{.Retract}}ID:{{.ID}}&nbsp;&nbsp;&nbsp;{{.TimeDate}}&nbsp;&nbsp;&nbsp;{{.Author}}</p>
+<p>{{.Retract}}{{.Information}}</p>
+<p>like:{{.Like}}</p>
+<br>
+{{end}}
+</body>
+</html>
