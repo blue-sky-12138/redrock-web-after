@@ -10,7 +10,7 @@ var(
 )
 
 func Entrance(){
-	//http://localhost:8080/index
+	//http://localhost:80/index
 	//预载服务器
 	router = gin.Default()
 	router.LoadHTMLGlob("templates/html/*")

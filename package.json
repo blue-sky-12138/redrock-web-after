@@ -1,0 +1,28 @@
+{
+  "name": "redrock-web-after",
+  "version": "1.0.0",
+  "description": "This is a common center of error. Enjoy the tour!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blue-sky-12138/redrock-web-after.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blue-sky-12138/redrock-web-after/issues"
+  },
+  "homepage": "https://github.com/blue-sky-12138/redrock-web-after#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
