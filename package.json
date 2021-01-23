@@ -1,10 +1,18 @@
 {
   "name": "redrock-web-after",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This is a common center of error. Enjoy the tour!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "vue-cli-service serve --open --mode development",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint --fix",
+    "changelog": "node scripts/changelog.js",
+    "dev": "vue-cli-service serve",
+    "new": "node scripts/new.js",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
