@@ -1,7 +1,7 @@
 {
   "name": "redrock-web-after",
-  "version": "1.1.0",
-  "description": "This is a common center of error. Enjoy the tour!",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,10 +9,10 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint --fix",
-    "changelog": "node scripts/changelog.js",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "dev": "vue-cli-service serve",
     "new": "node scripts/new.js",
-    "release": "standard-version"
+    "release": "git add . && git cz  && standard-version && git push --follow-tags origin master"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "C:/now/RedRock/web-after/node_modules/cz-conventional-changelog"
     }
   }
 }
